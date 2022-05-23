@@ -27,6 +27,7 @@
         "@fullcalendar/core": "^5.11.0",
         "@fullcalendar/daygrid": "^5.11.0",
         "@fullcalendar/interaction": "^5.11.0",
-        "@fullcalendar/vue": "^5.11.0"
+        "@fullcalendar/vue": "^5.11.0",
+        "vuejs-datetimepicker": "^1.1.13"
     }
 }

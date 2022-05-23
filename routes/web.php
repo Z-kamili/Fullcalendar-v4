@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventManageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/calendar/add',[EventManageController::class,'store'])->name('calendar.add');
+Route::get('/calendar/events',[EventManageController::class,'get_events'])->name('calendar.get_event');
