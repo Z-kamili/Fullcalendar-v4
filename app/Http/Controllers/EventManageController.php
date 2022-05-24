@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EventManageController extends Controller
 {
@@ -35,16 +36,14 @@ class EventManageController extends Controller
      */
     public function store(Request $request)
     {
-        try{
+        try {
           $event = new Event();
-          $event->name = $request->title;
+          $event->title = $request->title;
           $event->start = $request->start_date;
           $event->end = $request->end_date;
           $event->save();
-        //   return response("sucess",200,Array($event));
         }
-        catch(\Exception $e)
-        {
+        catch(\Exception $e) {
          return redirect()->back()->withErrors(['error'=>$e->getMessage()]);
         }
     }
@@ -80,9 +79,22 @@ class EventManageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        try 
+        {
+           DB::beginTransaction();
+           $event = Event::where('id',$request->id)->get()->first();
+           $event->title = $request->title;
+           $event->start = $request->start_date;
+           $event->end = $request->end_date;
+           $event->update();
+           DB::commit();
+        }
+        catch(\Exception $e)
+        {
+            DB::rollback();
+        }
     }
 
     /**
@@ -93,7 +105,8 @@ class EventManageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $event = Event::findOrFail($id)->delete();
+        return response('Event removed successfully');
     }
 
     public function get_events()
