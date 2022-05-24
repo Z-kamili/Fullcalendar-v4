@@ -169,9 +169,9 @@ data(){
 </script>
 
 <template>
-<div class="m-auto">
+<div class="column m-auto">
       <!-- add event -->
-      <div class="col-md-8" v-if="showmodelajouter">
+      <div  v-if="showmodelajouter">
         <form @submit.prevent>
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -179,7 +179,7 @@ data(){
                 <h5 class="modal-title">Ajouter un evenement</h5>
                 <button
                   type="button"
-                  class="close"
+                  class="btn btn-secondary btn-save"
                   data-dismiss="modal"
                   aria-label="Close">
                   <span v-on:click="this.hideModelAdd" aria-hidden="true">&times;</span>
@@ -222,7 +222,7 @@ data(){
                   v-on:click="this.hide"
                   @click="addNewEvent"
                 >
-                 Ajouter
+                 Add
                 </button>
                 <button
                   type="button"
@@ -230,7 +230,7 @@ data(){
                   data-dismiss="modal"
                   v-on:click="this.hideModelAdd"
                 >
-                  Quitter
+                  close
                 </button>
               </div>
             </div>
@@ -239,7 +239,7 @@ data(){
       </div>
 
   <!-- update event -->
-      <div class="col-md-8" v-if="showmodelupdate">
+      <div  v-if="showmodelupdate">
         <form @submit.prevent>
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -247,7 +247,7 @@ data(){
                 <h5 class="modal-title">Modifier un evenement</h5>
                 <button
                   type="button"
-                  class="close"
+                  class="btn btn-secondary btn-save"
                   data-dismiss="modal"
                   aria-label="Close">
                   <span v-on:click="this.hideModelUpdate" aria-hidden="true">&times;</span>
@@ -290,7 +290,7 @@ data(){
                   v-on:click="this.hide"
                   @click="this.update_event"
                 >
-                 modifier
+                 update
                 </button>
                 <button
                   type="button"
@@ -298,7 +298,7 @@ data(){
                   data-dismiss="modal"
                   v-on:click="this.delete"
                   >
-                  supprimer
+                  delete
                 </button>
               </div>
             </div>
@@ -306,7 +306,7 @@ data(){
         </form>
       </div>
     <!-- end event -->
-     <div class="col-md-8">
+     <div >
         <FullCalendar defaultView="dayGridMonth" :options="calendarOptions" />
     </div>
 </div>

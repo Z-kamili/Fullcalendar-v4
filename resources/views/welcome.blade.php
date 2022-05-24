@@ -14,14 +14,15 @@
 
 <body>
     <div id="app" class="container">
-        <div class="page-content">
             <div class="container block-margin">
                 <div class="row d-flex">
+                    <div class="w-100">
                     {{-- calendar componant --}}
                     <Fullcalendar></Fullcalendar>
+                    </div>
+
                 </div>
             </div>
-        </div>
     </div>
     <script src="/js/app.js"></script>
 </body>

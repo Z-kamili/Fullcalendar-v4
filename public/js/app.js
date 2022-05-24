@@ -67504,9 +67504,9 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "m-auto" }, [
+  return _c("div", { staticClass: "column m-auto" }, [
     _vm.showmodelajouter
-      ? _c("div", { staticClass: "col-md-8" }, [
+      ? _c("div", [
           _c(
             "form",
             {
@@ -67530,7 +67530,7 @@ var render = function () {
                       _c(
                         "button",
                         {
-                          staticClass: "close",
+                          staticClass: "btn btn-secondary btn-save",
                           attrs: {
                             type: "button",
                             "data-dismiss": "modal",
@@ -67658,11 +67658,7 @@ var render = function () {
                           attrs: { type: "button", "data-dismiss": "modal" },
                           on: { click: [this.hide, _vm.addNewEvent] },
                         },
-                        [
-                          _vm._v(
-                            "\r\n                 Ajouter\r\n                "
-                          ),
-                        ]
+                        [_vm._v("\r\n                 Add\r\n                ")]
                       ),
                       _vm._v(" "),
                       _c(
@@ -67674,7 +67670,7 @@ var render = function () {
                         },
                         [
                           _vm._v(
-                            "\r\n                  Quitter\r\n                "
+                            "\r\n                  close\r\n                "
                           ),
                         ]
                       ),
@@ -67688,7 +67684,7 @@ var render = function () {
       : _vm._e(),
     _vm._v(" "),
     _vm.showmodelupdate
-      ? _c("div", { staticClass: "col-md-8" }, [
+      ? _c("div", [
           _c(
             "form",
             {
@@ -67712,7 +67708,7 @@ var render = function () {
                       _c(
                         "button",
                         {
-                          staticClass: "close",
+                          staticClass: "btn btn-secondary btn-save",
                           attrs: {
                             type: "button",
                             "data-dismiss": "modal",
@@ -67842,7 +67838,7 @@ var render = function () {
                         },
                         [
                           _vm._v(
-                            "\r\n                 modifier\r\n                "
+                            "\r\n                 update\r\n                "
                           ),
                         ]
                       ),
@@ -67856,7 +67852,7 @@ var render = function () {
                         },
                         [
                           _vm._v(
-                            "\r\n                  supprimer\r\n                "
+                            "\r\n                  delete\r\n                "
                           ),
                         ]
                       ),
@@ -67871,7 +67867,6 @@ var render = function () {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "col-md-8" },
       [
         _c("FullCalendar", {
           attrs: { defaultView: "dayGridMonth", options: _vm.calendarOptions },
